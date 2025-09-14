@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mymicro-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mymicro
+  template:
+    metadata:
+      labels:
+        app: mymicro
+    spec:
+      containers:
+      - name: mymicro
+        image: rups1/mymicro:latest
+        ports:
+        - containerPort: 8080
+
